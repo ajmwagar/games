@@ -1,0 +1,11 @@
+version: "2"
+services:
+  terraria:
+    container_name: terraria
+    image: ryshe/terraria:latest
+    restart: unless-stopped
+    ports:
+      - "7777:7777"
+    volumes:
+            - "./data/terraria:/world"
+    command: ["mono", "--server", "--gc=sgen", "-O=all", "TerrariaServer.exe", "-world", "/world/shagado.wld"]

@@ -1,0 +1,14 @@
+version: '2'
+services:
+  minecraft:
+    container_name: minecraft
+    environment:
+      - MAX_MEMORY=16G
+      - TYPE=SPIGOT
+      - EULA=true
+    restart: unless-stopped
+    ports:
+      - "25565:25565"
+    image: itzg/minecraft-server:latest
+    volumes:
+      - "./data/minecraft:/data"

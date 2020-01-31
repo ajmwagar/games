@@ -1,0 +1,10 @@
+version: '2'
+services:
+  minecraft:
+    extends:
+      file: ./minecraft.yml
+      service: minecraft
+  terraria:
+    extends:
+      file: ./terraria.yml
+      service: terraria
