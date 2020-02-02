@@ -1,15 +1,16 @@
 version: '2'
 services:
   minecraft:
-    container_name: minecraft
+    container_name: minecraft-voltz
     environment:
       - MAX_MEMORY=16G
-      - TYPE=SPIGOT
+      - TYPE=CUSTOM
       - EULA=true
+      - CUSTOM_SERVER=/data/Voltz.jar
     restart: unless-stopped
     ports:
       - "25565:25565"
       - "25575:25575"
     image: itzg/minecraft-server:latest
     volumes:
-      - "./data/mc:/data"
+      - "./data/mc-voltz:/data"

@@ -1,10 +1,10 @@
 version: '2'
 services:
   minecraft:
-    container_name: minecraft
+    container_name: minecraft-forge
     environment:
       - MAX_MEMORY=16G
-      - TYPE=SPIGOT
+      - TYPE=FORGE
       - EULA=true
     restart: unless-stopped
     ports:
@@ -12,4 +12,4 @@ services:
       - "25575:25575"
     image: itzg/minecraft-server:latest
     volumes:
-      - "./data/mc:/data"
+      - "./data/mc-forge:/data"
